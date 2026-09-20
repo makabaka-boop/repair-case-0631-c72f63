@@ -39,7 +39,7 @@ class EndHeap {
   prune(start: number): void {
     const e = this.ends;
     const r = this.refs;
-    while (e.length > 0 && e[0] <= start) {
+    while (e.length > 0 && e[0] < start) {
       const lastE = e.pop()!;
       const lastR = r.pop()!;
       if (e.length === 0) break;
@@ -157,9 +157,9 @@ export class PatchIndex {
         if (f.id !== excludeId) ids.push(f.id);
       }
     }
-    // start' < 查询起点：footprint <= 512，故只需回看 511 个通道；
+    // start' < 查询起点：对方 footprint <= 512，故只需回看 511 个通道；
     // 桶内按 end 降序，遇到第一盏 end < start 即可停止。
-    const floor = start - (footprint - 1);
+    const floor = start - (MAX_CHANNEL - 1);
     for (let i = from - 1; i >= 0 && starts[i] >= floor; i--) {
       for (const f of buckets.get(starts[i])!) {
         if (starts[i] + f.footprint - 1 < start) break;

@@ -76,7 +76,7 @@ export function parseFixtures(input: unknown): ImportResult {
     if (!isInt(footprint) || footprint < MIN_CHANNEL || footprint > MAX_CHANNEL) {
       return invalidPatch('FOOTPRINT_OUT_OF_RANGE', i);
     }
-    if (start + footprint >= MAX_START_PLUS_FOOTPRINT) {
+    if (start + footprint > MAX_START_PLUS_FOOTPRINT) {
       return invalidPatch('RANGE_OVERFLOW', i);
     }
 
