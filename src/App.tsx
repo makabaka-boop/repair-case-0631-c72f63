@@ -144,12 +144,7 @@ function Workbench() {
       setNotice('目标位存在阻挡灯具，补丁未改变');
       return;
     }
-    setPatch({
-      fixtures: next,
-      index: patch.index,
-      groups: patch.groups,
-      verifyMs: patch.verifyMs,
-    });
+    setPatch({ fixtures: next, ...verify(next) });
     setNotice(
       `已提交：${trial.id} → universe ${targetUniverse} / start ${targetStart}，已重新核验`,
     );
