@@ -1,0 +1,10 @@
+[
+  { "id": "SPOT-001", "universe": 1, "start": 1, "footprint": 20 },
+  { "id": "WASH-001", "universe": 1, "start": 15, "footprint": 12 },
+  { "id": "BEAM-001", "universe": 1, "start": 20, "footprint": 16 },
+  { "id": "SPOT-002", "universe": 1, "start": 100, "footprint": 18 },
+  { "id": "WASH-002", "universe": 2, "start": 1, "footprint": 12 },
+  { "id": "BEAM-002", "universe": 2, "start": 1, "footprint": 16 },
+  { "id": "FOLLOW", "universe": 3, "start": 480, "footprint": 33 },
+  { "id": "HAZE", "universe": 3, "start": 512, "footprint": 1 }
+]
